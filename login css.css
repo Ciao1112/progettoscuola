@@ -1,0 +1,65 @@
+*{
+margin: 0;
+padding:0;
+box-sizing: border-box;
+font-family: 'Arial',sans-serif;
+}
+body
+{
+ background-image: url('https://img.freepik.com/vettori-premium/icone-piatte-dell-auditorium-del-cinema-con-sedili-pubblico-e-schermo-trasparente-illustrazione-vettoriale_108855-3379.jpg?semt=ais_hybrid&w=740&q=80');
+background-size: cover;       
+  background-position: center;
+  background-repeat: no-repeat;
+
+ display:flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.form-container
+{
+background: rgba(255, 255, 255, 0.2);
+padding:40px;
+border-radius: 15px;
+box-shadow: 0 0 15px rgba(139, 51, 63);
+width: 320px;
+margin-bottom: 100;
+text-align: center;
+}
+h2
+{
+color:  black;
+margin-bottom: 20px;
+}
+.input-box
+{
+    position: relative;
+    margin: 20px 0;
+}
+.input-box input
+{
+    width: 100%;
+    padding: 12px 15px;
+    background:none;
+    border: none;
+    color: black;
+    font-size: 18px;
+    border-bottom: 2px solid  rgba(139, 51, 63);
+    transition: 0.4s;
+}
+.input-box input:focus
+{
+    border-color: rgba(139, 51, 63);
+}
+.login
+{
+    background: rgba(139, 51, 63);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 10px;
+}
