@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re View-Me - Progetto Scolastico</title>
+    <style>
+        /* --- STILE GENERALE --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* --- STILE LOGIN (dal tuo file login css) --- */
+        #login-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], 
+        input[type="password"], 
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+        }
+
+        .login-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* --- STILE AREA RISERVATA (Sito Web) --- */
+        #main-content {
+            width: 100%;
+            max-width: 600px;
+            display: none; /* Nascosto all'inizio */
+            text-align: center;
+        }
+
+        nav {
+            background-color: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        nav button {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav button:hover {
+            background-color: #f0f7ff;
+            border-color: #3498db;
+        }
+
+        section {
+            display: none; /* Nasconde le sezioni non attive */
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .attiva {
+            display: block;
+        }
+
+        .action-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .logout-btn {
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        .logout-btn:hover {
+            background-color: #fff5f5;
+            border-color: #c0392b;
+        }
+
+        /* --- ANIMAZIONI --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="form-container">
+            <h2>Re View-Me</h2>
+            <p>Accedi al tuo diario</p>
+            <div class="input-box">
+                <input type="text" id="user" placeholder="Username">
+            </div>
+            <div class="input-box">
+                <input type="password" id="pass" placeholder="Password">
+            </div>
+            <button class="login-btn" onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <h1>Re View-Me</h1>
+        <p class="subtitle">Il mio diario digitale di Film e Serie TV</p>
+
+        <nav>
+            <button onclick="showMe('diario')">Il mio Diario</button>
+            <button onclick="showMe('consigliati')">Consigliati</button>
+            <button onclick="showMe('rivedere')">Da rivedere</button>
+            <button onclick="showMe('profilo')">Profilo</button>
+            <button class="logout-btn" onclick="logout()">Esci</button>
+        </nav>
+
+        <section id="diario" class="attiva">
+            <h2>Il mio Diario</h2>
+            <p>Tutti i film e le serie TV che hai visto</p>
+            <input type="text" placeholder="Cerca nel diario..."> 
+            <div style="margin-top: 10px;">
+                <button>Filtri</button> 
+                <button>Aggiungi</button>
+            </div>
+            <p style="color: #888; margin-top: 20px;"><i>Nessun contenuto ancora. Inizia ad aggiungere i tuoi film preferiti!</i></p>
+        </section>
+
+        <section id="consigliati">
+            <h2>Consigliati per me</h2>
+            <p>Suggerimenti AI basati sui tuoi generi preferiti</p>
+            <button class="action-btn">Genera Suggerimenti AI</button>
+        </section>
+
+        <section id="rivedere">
+            <h2>Da rivedere</h2>
+            <p>Film piaciuti (voto >= 9) ma che non vedi da 6 mesi</p>
+            <div style="border: 1px dashed #ccc; padding: 20px; border-radius: 10px; color: #999;">
+                Nessun contenuto da rivedere al momento
+            </div>
+        </section>
+
+        <section id="profilo">
+            <h2>Profilo Utente</h2>
+            <div style="text-align: left; max-width: 300px; margin: 0 auto;">
+                <label>Nome:</label>
+                <input type="text" value="Mario">
+                <label>Cognome:</label>
+                <input type="text" value="Rossi">
+                <label>Email:</label>
+                <input type="email" value="mario.rossi@example.com">
+                <label>Città:</label>
+                <input type="text" value="Roma">
+            </div>
+            <button class="action-btn">Salva Modifiche</button>
+        </section>
+    </div>
+
+    <script>
+        // Funzione per simulare il login
+        function login() {
+            const user = document.getElementById('user').value;
+            const pass = document.getElementById('pass').value;
+
+            // Per questo esempio, basta inserire qualcosa per entrare
+            if (user !== "" && pass !== "") {
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                alert("Inserisci Username e Password!");
+            }
+        }
+
+        // Funzione per il logout
+        function logout() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('login-screen').style.display = 'flex';
+        }
+
+        // Funzione per cambiare sezione
+        function showMe(idSezione) {
+            // Nasconde tutte le sezioni
+            const sezioni = document.querySelectorAll('section');
+            sezioni.forEach(s => s.classList.remove('attiva'));
+            
+            // Mostra quella selezionata
+            document.getElementById(idSezione).classList.add('attiva');
+        }
+    </script>
+
+</body>
+</html>
