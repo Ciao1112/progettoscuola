@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Re View-Me - Il mio diario digitale</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: black;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: black;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav button {
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav button:hover {
+            background-color: white;
+            border-color: red;
+        }
+
+        section {
+            display: none; 
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            width: 500px;
+            text-align: center;
+        }
+
+        .attiva {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        button.action-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        button.action-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Re View-Me</h1>
+    <p class="subtitle">Il mio diario digitale di Film e Serie TV</p>
+
+    <nav>
+        <button onclick="showMe('diario')">Diario</button>
+        <button onclick="showMe('consigliati')">Consigliati</button>
+        <button onclick="showMe('rivedere')">Da Rivedere</button>
+        <button onclick="showMe('profilo')">Profilo</button>
+    </nav>
+
+    <section id="diario" class="attiva">
+        <h2>Il mio Diario</h2>
+        <input type="text" placeholder="Cerca un film..."> 
+        <div style="display: flex; gap: 5px; justify-content: center;">
+            <button style="padding: 5px 10px;">Filtri</button>
+            <button style="padding: 5px 10px;">Aggiungi</button>
+        </div>
+        <p style="margin-top: 20px; color: #888;"><i>Nessun contenuto ancora. Inizia ad aggiungere i tuoi preferiti!</i></p>
+    </section>
+
+    <section id="consigliati">
+        <h2>Consigliati per me</h2>
+        <p>Suggerimenti AI basati sui tuoi gusti</p>
+        <button class="action-btn">Genera Suggerimenti AI</button>
+    </section>
+
+    <section id="rivedere">
+        <h2>Da rivedere</h2>
+        <p>Film con voto >= 9 non visti da 6 mesi</p>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; border: 1px dashed #ccc;">
+            <i>Nessun contenuto da rivedere al momento</i>
+        </div>
+    </section>
+
+    <section id="profilo">
+        <h2>Il mio Profilo</h2>
+        <input type="text" placeholder="Nome" value="Mario">
+        <input type="text" placeholder="Cognome" value="Rossi">
+        <input type="email" placeholder="Email" value="mario.rossi@example.com">
+        <input type="text" placeholder="Città" value="Roma">
+        <button class="action-btn">Salva Modifiche</button>
+    </section>
+
+    <script>
+        function showMe(idSezione) {
+
+            const sezioni = document.querySelectorAll('section');
+            sezioni.forEach(s => s.classList.remove('attiva'));
+            document.getElementById(idSezione).classList.add('attiva');
+        }
+    </script>
+
+</body>
+</html>
