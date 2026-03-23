@@ -1,0 +1,231 @@
+/* Reset generale: azzera margini e padding predefiniti dei browser */
+* {
+    box-sizing: border-box; /* Include padding e bordi nel calcolo della larghezza totale */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-image: url(''); /* Inserire l'URL tra le virgolette per uno sfondo */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Fa sì che l'immagine copra tutta la pagina */
+    background-attachment: fixed; /* Lo sfondo resta fermo mentre la pagina scorre */
+    min-height: 100vh; /* Altezza minima pari a tutto lo schermo */
+    padding: 20px;
+}
+
+/* Titolo principale del sito (Re View-Me) */
+.h1 {
+    margin-right: 470px; /* Distanza dal contenuto alla sua destra */
+    margin-top: 33px;    /* Distanza dal bordo superiore */
+    color: rgba(139, 51, 63); /* Colore bordeaux */
+    text-shadow: 2px 2px 4px rgba(139, 51, 63, 0.5); /* Ombra leggera sotto il testo */
+    margin-bottom: 30px;
+}
+
+/* LA RIGA CHE CERCAVI: Barra di navigazione */
+nav {
+    display: flex;          /* Allinea gli elementi (titolo e bottoni) in orizzontale */
+    justify-content: center; /* Centra il contenuto della nav */
+    flex-wrap: wrap;        /* Se lo schermo è piccolo, i bottoni vanno a capo */
+    gap: 28px;              /* Spazio tra un bottone e l'altro */
+    margin-bottom: 20px;    /* Spazio sotto la barra */
+    
+    /* QUESTA È LA RIGA DI DIVISIONE: */
+    /* Crea un bordo solo sul lato inferiore, color bordeaux trasparente (0.2) */
+    border-bottom: 2px solid rgba(139, 51, 63, 0.2); 
+}
+
+/* Bottoni del menu (Diario, Consigliati, Rivedere) */
+.button2 {
+    color: white;
+    height: 35px;
+    margin-top: 30px;
+    border-radius: 13px; /* Bordi arrotondati */
+    background-color: rgba(139, 51, 63);
+    border: 2px solid rgba(139, 51, 63);
+    cursor: pointer;    /* Fa apparire la manina al passaggio del mouse */
+    transition: all 0.3s ease; /* Rende l'animazione dell'hover fluida */
+    font-weight: bold;
+    min-width: 140px;
+    margin-right: 30px;
+}
+
+/* Effetto quando passi sopra i bottoni col mouse */
+.button2:hover {
+    background-color: white;
+    color: rgba(139, 51, 63);
+    transform: translateY(-2px); /* Muove il bottone leggermente verso l'alto */
+}
+
+/* Nasconde tutte le sezioni di default */
+section {
+    display: none;
+}
+
+/* Classe usata da JavaScript per mostrare solo la sezione selezionata */
+section.attiva {
+    display: block;
+}
+
+h2 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* Stile per la barra di ricerca */
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid rgba(139, 51, 63); /* Solo linea sotto */
+    background: transparent;
+    outline: none; /* Toglie il bordo blu quando clicchi per scrivere */
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Contenitore per allineare titolo sezione e tasti ricerca/aggiungi */
+.destra {
+    display: flex; 
+    justify-content: space-between; /* Titolo a sinistra, tasti a destra */
+    align-items: flex-end; 
+    margin-bottom: 20px;
+}
+
+/* Mette l'input e i bottoni sulla stessa riga */
+.stessariga {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-top: -50px;
+    margin-right: 30px;
+}
+
+/* Bottoni Filtri e Aggiungi */
+.bottonfiltriAggiungi {
+    background: rgba(139, 51, 63);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap; /* Impedisce al testo di andare a capo nel bottone */
+    width: 200px;
+}   
+
+/* Bottone tondo per l'icona del profilo */
+.button1 {
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius: 40px;
+    border-color: white;
+    cursor: pointer;
+    background: transparent;
+    margin-left: 575px;
+}
+
+.button1:hover {
+    background-color: white;
+    transform: translateY(-2px);
+}
+
+.profilo {
+    height: 40px; /* Dimensione immagine profilo */
+}
+
+.testo {
+    text-align: center;
+    margin-top: 150px;
+    color: rgba(0,0,0,0.5); /* Grigio chiaro */
+    font-style: italic;
+}
+
+/* Sezione Consigliati AI */
+.bottonAI {
+   background: rgba(139, 51, 63);
+   color: white;
+   border: none;
+   padding: 8px 15px;
+   border-radius: 10px;
+   cursor: pointer;
+   margin-left: 45%; /* Centra approssimativamente il tasto */
+   margin-top: 40px;
+}
+
+/* Icona ingranaggio rotante (placeholder) */
+.rotella {
+    font-size: 60px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Form del profilo e salvataggio */
+.bottonsalva {
+    background: rgba(139, 51, 63);
+    color: white;
+    border: none;
+    margin-top: 15px;
+    padding: 8px 15px;
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.bottonannulla {
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(128, 128, 128);
+    margin-top: 15px;
+    padding: 8px 15px;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Campi di input del profilo */
+.contenitore {
+  display: flex;
+  flex-direction: column; /* Label sopra, input sotto */
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+label {
+   font-weight: bold;
+   font-size: 14px;
+   margin-bottom: 5px;
+}
+
+input[type="text1"] {
+  width: 50%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0.1); /* Sfondo grigio trasparente */
+}
+
+/* Posizionamento sezione Aggiungi Film */
+.centrale {
+    margin-top: 200px;
+    margin-left: 750px; /* Attenzione: questo valore potrebbe spostare il form troppo a destra su schermi piccoli */
+}
+
+.titolo {
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 5px;
+}
+
+.textarea {
+  width: 200px;       
+  height: 100px;     
+  padding: 15px;     
+  font-size: 15px;
+}
