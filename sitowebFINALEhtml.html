@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <link rel="stylesheet" href="sitowebFINALEcss.css">
+</head>
+<body>
+        
+    <div class="form-container">
+        <nav>
+             <h2 class="h1">🎬 Re View-Me</h2>
+            <button onclick="showMe('diario')"class="button2">Il mio Diario</button>
+            <button onclick="showMe('consigliati')"class="button2">Consigliati</button>
+            <button onclick="showMe('rivedere')"class="button2">Da rivedere</button>
+            <button onclick="showMe('profilo')"class="button1"><img class="profilo"src="https://static.vecteezy.com/ti/vettori-gratis/t2/2318271-icona-profilo-utente-vettoriale.jpg" alt="immagine profilo"></button>
+        </nav>
+
+      <section id="diario" class="attiva">
+    <div class="destra">
+        <div>
+            <h2>Il mio Diario</h2>
+            <p>Tutti i film e le serie TV che hai visto</p>
+        </div>
+        
+        <div class="stessariga">
+            <input type="text" placeholder="Cerca..."> 
+            <button class="bottonfiltriAggiungi">Filtri</button> 
+            <button onclick="showMe('aggiungi')"class="bottonfiltriAggiungi">+ Aggiungi</button>            
+        </div>
+    </div>
+    <p class="testo">Nessun contenuto ancora. Inizia ad aggiungere i tuoi film e serie TV preferiti!</p>
+</section>
+<section class="centrale" id="aggiungi">
+    <div>
+        <label>Titolo</label>
+          <input class="titolo" type="text" placeholder="Inserisci il titolo" required>
+    </div>
+    <div>
+        <label>URL Locandina</label>
+        <input class="titolo" type="text" placeholder="https://esempio.com/locandina.jpg">
+    </div>
+    <div>
+        <label>Tipologia </label>
+                    <select class="titolo" required>
+                        <option>Film</option>
+                        <option>Serie TV</option>
+                    </select>
+    </div>
+    <div>
+        <label>Genere </label>
+                    <select class="titolo" required>
+                        <option>Seleziona genere</option>
+                        <option>Azione</option>
+                        <option>Dramma</option>
+                        <option>Commedia</option>
+                        <option>Horror</option>
+                    </select>
+    </div>
+    <div>
+        <label>voto da (1-10)</label>
+        <input class="titolo" type="number" placeholder="8" min="1" max="10" class="input-modal" required>
+    </div>
+    <div>
+        <label>Data di visione</label>
+        <input class="titolo" type="date" placeholder="10/01/2026" required>
+    </div>
+    <div>
+        <label>Commento personale</label>
+        <textarea class="textarea" placeholder="Cosa ne pensi? Aggiungi le tue riflessioni"></textarea>
+    </div>
+    <div>
+        <button class="bottonfiltriAggiungi">Aggiungi al diario</button>
+        <button class="bottonannulla">Annulla</button>
+    </div>
+</section>
+
+        <section id="consigliati">
+            <h2 class="consigliati">Consigliati per me</h2>
+            <p class="consigliati1">Suggerimenti AI basati sui tuoi generi preferiti</p>
+            <br>
+            <button class="bottonAI">✨ Genera Suggerimenti AI</button>
+            <p class="rotella">⚙️</p>
+             <p class="testo1">Aggiungi alcuni film e serie TV al tuo diario per ricevere suggerimenti AI personalizzati</p>
+        </section>
+
+        <section id="rivedere">
+            <h2 class="consigliati">Da rivedere</h2>
+            <p class="consigliati1">Film e serie TV che hai amato ma non vedi da almeno 6 mesi.</p>
+            <br>
+            <div>
+                <p class="testo"><i>Nessun contenuto da rivedere al momento. Aggiungi film o serie TV con voto ≥ al tuo diario!</i></p>
+            </div>
+        </section>
+
+        <section id="profilo">
+    <h2>Il mio Profilo</h2>
+        <div class="contenitore">
+            <label>Nome</label>
+            <input type="text1" placeholder="Mario">
+        </div>
+        <div class="contenitore">
+            <label>Cognome</label>
+            <input type="text1" placeholder="Rossi">
+        </div>
+    <div class="contenitore">
+        <label>Email</label>
+        <input type="text1" placeholder="mario.rossi@example.com">
+    </div>
+
+    <div class="contenitore">
+        <label>Password</label>
+        <input type="text1" placeholder="******">
+    </div>
+
+    <div class="contenitore">
+        <label>Telefono</label>
+        <input type="text1" placeholder="+39 123 456 7890">
+    </div>
+
+    <div class="contenitore">
+        <label>Città</label>
+        <input type="text1" placeholder="Roma">
+    </div>
+    <div>
+        <button class="bottonsalva">Salva</button>
+        <button class="bottonannulla">Annulla</button>
+    </div>
+</section>
+    </div>
+    <script>
+        function showMe(idSezione) {
+            // Nasconde tutte le sezioni
+            const sezioni = document.querySelectorAll('section');
+            sezioni.forEach(s => s.classList.remove('attiva'));
+            
+            // Mostra quella selezionata
+            document.getElementById(idSezione).classList.add('attiva');
+        }
+    </script>
+
+</body>
+</html>

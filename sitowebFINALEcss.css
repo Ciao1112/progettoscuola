@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body
+ {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-position: center;     /*possibile sfondo*/
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene lo sfondo fisso durante lo scorrimento */
+    min-height: 100vh;
+    padding: 20px;
+}
+.h1 {
+    margin-right: 470px;
+    margin-top: 33px;
+    color: rgba(139, 51, 63);
+    text-shadow: 2px 2px 4px rgba(139, 51, 63,0.5);
+    margin-bottom: 30px;
+}
+nav 
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(139, 51, 63, 0.2);
+}
+.button2
+{
+    color: white;
+    height: 35px;
+    margin-top: 30px;
+    border-radius: 13px;
+    background-color: rgba(139, 51, 63);
+    border: 2px solid rgba(139, 51, 63);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 140px;
+    margin-right: 30px;
+}
+
+.button2:hover 
+{
+    background-color: white;
+    color: rgba(139, 51, 63);
+    transform: translateY(-2px);
+}
+section
+ {
+    display: none;
+}
+
+section.attiva 
+{
+    display: block;
+}
+
+h2 
+{
+    color:black;
+    margin-bottom: 15px;
+}
+
+input[type="text"]
+{
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid rgba(139, 51, 63);
+    background: transparent;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+
+}
+.destra
+{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    margin-bottom: 20px;
+}
+.stessariga
+{
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-top: -50px;
+    margin-right: 30px;
+}
+
+.bottonfiltriAggiungi 
+ {
+    background: rgba(139, 51, 63);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    width: 200px;
+ }   
+.button1
+{
+
+    width:30px;
+    height: 30px;
+    margin-top: 30px;
+    border-radius:40px;
+    border-color: white;
+    cursor: pointer;
+    background: transparent;
+    margin-left: 575px;
+}
+.button1:hover
+{
+    background-color: white;
+    transform: translateY(-2px);
+}
+.profilo
+{
+    height: 40px;
+}
+.testo
+{
+    text-align: center;
+    margin-top: 150px;
+    color: rgba(0,0,0,0.5);
+    font-style: italic;
+}
+.consigliati
+{
+    font-size: 26px;
+}
+.consigliati1
+{
+    color: rgba(0,0,0,0.5);
+    font-style: italic;
+    font-size: 15px;
+}
+.bottonAI
+{
+   background: rgba(139, 51, 63);
+   color: white;
+   border: none;
+   padding: 8px 15px;
+   border-radius: 10px;
+   cursor: pointer;
+   margin-left: 45%;
+   margin-top: 40px;
+}
+.rotella
+{
+    font-size: 60px;
+    text-align: center;
+    margin-top: 60px;
+}
+.testo1
+{
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(0,0,0,0.5);
+    font-style: italic;
+}
+.bottonsalva
+{
+    background: rgba(139, 51, 63);
+    color: white;
+    border: none;
+    margin-top: 15px;
+    padding: 8px 15px;
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+.bottonannulla
+{
+    background-color: white;
+    color: black;
+    border-color: rgb(128, 128, 128);
+    margin-top: 15px;
+    padding: 8px 15px;
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.contenitore
+{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 100%;
+}
+label
+{
+   font-weight: bold;
+   font-size: 14px;
+   margin-bottom: 5px;
+}
+
+
+input[type="text1"] 
+{
+  width: 50%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: rgb(128, 128, 128,0.1);
+}
+.titolo
+{
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(128, 128, 128,0.1);
+    
+}
+.centrale
+{
+    align-items: center;     
+    margin-top: 200px;
+    margin-left: 750px;
+}
+.textarea
+ {
+  width: 200px;       
+  height: 100px;     
+  padding: 15px;     
+  font-size: 15px;
+}
